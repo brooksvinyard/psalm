@@ -62,6 +62,8 @@ h1, h2, h3, h4, h5 {
     /* font-size: 18px; */
     letter-spacing: 1px;
     margin-bottom: 15px;
+    font-family: 'Comfortaa', cursive;
+
 }
 
 h1 {
@@ -101,7 +103,7 @@ h4 {
 p, div, footer {
     line-height: 1.5;
     font-size: 1.6rem;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 strong, b {
@@ -115,7 +117,7 @@ body {
 .container {
     max-width: 880px;
     margin: 0 auto;
-    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12); */
         
 }
 
@@ -136,19 +138,37 @@ header {
     align-items: center;
     justify-content: center;
     color: white;
+
+    margin: 0 0 10px 0;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
 .instructions {
     background-color: rgb(207, 248, 247);
     padding: 5% 3%;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+    
 }
 
 .psalm {
-    border-top: 1px solid rgb(5, 75, 74);;
+    /* border-top: 1px solid rgb(5, 75, 74);; */
     /* background-color: white; */
     background-color: rgb(207, 248, 247);
     padding: 5% 3%;
     color: rgb(5, 75, 74);
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+    
+}
+
+@media (max-width: 500px) {
+    .instructions, .psalm {
+        padding: 5% 7%;
+    }
 }
 
 footer {
@@ -158,8 +178,13 @@ footer {
     background: linear-gradient(to right, #0ABFBC, #FC354C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     color: white;
-    padding: 5% 0;
+    padding: 2% 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* margin: 0 0 10px 0; */
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+}
 }
