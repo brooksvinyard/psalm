@@ -1,6 +1,6 @@
 const psalms = window.psalms
 
-let todaysDate = new Date()
+const todaysDate = new Date()
 todaysDate = todaysDate.getDate()
 
 const psalmsOTD = [
@@ -15,7 +15,7 @@ const psalmsOTD = [
  * @param {Number} chapter - The the psalm's chapter
  * @param {string} verses - The the psalm's verses HTML string, generated from
  *                          renderVerse(...)
- * @return {string}
+ * @returns {string}
  */
 function renderPsalm(chapter, verses) {
   return `<div class="psalm">
@@ -24,10 +24,21 @@ function renderPsalm(chapter, verses) {
   </div>`
 }
 
+/**
+ * @param {Number} number - The verse number
+ * @param {string} verse - The verse itself.
+ * @returns {string} returns the HTML of the verse
+ */
 function renderVerse(number, verse) {
   return `<strong>${number}</strong> ${verse} <br>`
 }
 
+/**
+ * 
+ * @param {JSON} psalms - data from psalms.js
+ * @param {Array<Number>} chapters - array of chapters e.g. [3,33,63,93,123]
+ * @returns {string} HTML of the app
+ */
 function renderApp(psalms, chapters) {
   let html = ''
 
@@ -45,4 +56,5 @@ function renderApp(psalms, chapters) {
   return html
 }
 
+// Render the app into <div id="psalms"></div>
 document.getElementById('psalms').innerHTML = renderApp(psalms, psalmsOTD)
