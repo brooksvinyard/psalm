@@ -1,12 +1,12 @@
 const psalms = window.psalms
 
-let todaysDate = new Date()
-todaysDate = todaysDate.getDate()
+let todaysDate = new Date();
+todaysDate = todaysDate.getDate();
 
 // If the date is the 31st, we only want to display Psalm 119
 // Otherwise, we want to display the 5 Psalms of the day
 let psalmsOTD = [
-  todaysDate
+  119
 ]
 if (todaysDate != 31) {
   psalmsOTD = [
