@@ -8,15 +8,15 @@
     cursor: pointer;
     position: fixed;
     right: 0;
-    background-color: rgb(207, 248, 247, 0.5);
+    background-color: #84dedd;
     border-radius: 0 0 0 10px;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
 }
 .menu .menu-button:hover {
-    background-color: rgba(10, 191, 188);
+    background-color: #0abfbc;
 }
 .menu .menu-content {
-    background:  rgb(207, 248, 247);
+    background: #cff8f7;
     /* color: ; */
     height: 100%;
     max-width: 80%;
@@ -42,7 +42,6 @@
     right: 25px;
     top: 11px;
     width: 25px;
-    color: black;
 }
 
 .menu .menu-content h3 {
@@ -80,7 +79,7 @@
 .menu li:hover {
     box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
     color: ;
-    background-color: rgba(10, 191, 188, 0.5);
+    background-color: #0abfbc80;
 }
 .menu li:first-child {
     border-bottom: 0;
