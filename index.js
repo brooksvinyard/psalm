@@ -1,4 +1,4 @@
-const psalms = window.psalms
+let psalms = window.psalms
 
 let todaysDate = new Date();
 todaysDate = todaysDate.getDate();
@@ -19,50 +19,93 @@ if (todaysDate != 31) {
 }
 
 
-/**
- * @param {Number} chapter - The the psalm's chapter
- * @param {string} verses - The the psalm's verses HTML string, generated from
- *                          renderVerse(...)
- * @returns {string}
- */
-function renderPsalm(chapter, verses) {
-  return `<div class="psalm">
+///////////////////////////////////
+// ESV
+//const header = "Authorization: Token 7da60d7d2f5a81d0d7a463497986c890c72c99ca";
+// f7880735e365d733416b486cba4f75a2669769c5
+
+const token = '7da60d7d2f5a81d0d7a463497986c890c72c99ca';
+const url = 'https://api.esv.org/v3/passage/html/?'
+const myHeaders = ({
+    'Accept': 'application/json',
+    'authorization': 'Token f7880735e365d733416b486cba4f75a2669769c5'
+  });
+
+let myInit = {
+  method: 'GET',
+  headers: myHeaders,
+  mode: 'cors',
+  cache: 'default'
+};
+let params = "q=Ps" + `${psalmsOTD.join(",")}` +
+    "&include-headings=True" + 
+    "&include-footnotes=False" + 
+    "&include-verse-numbers=True" + 
+    "&include-short-copyright=True" + 
+    "&include-copyright=False" + 
+    "&include-passage-references=True" + 
+    "&include-chapter-numbers=False" + 
+    "&include-subheadings=True" + 
+    "&wrapping-div=True" + 
+    "&div-classes=psalm" + 
+    "&include-audio-link=false";
+
+
+fetch(`${url}${params}`, myInit)
+  .then(res => res.json())
+  .then(json => {
+    console.log(json);
+    let passage = json.passages.join("");
+    document.getElementById('esv').innerHTML += passage;
+  });
+// ESV
+/////////////////////////////////////////////////////
+
+ 
+  /**
+   * @param {Number} chapter - The the psalm's chapter
+   * @param {string} verses - The the psalm's verses HTML string, generated from
+   *                          renderVerse(...)
+   * @returns {string}
+   */
+  function renderPsalm(chapter, verses) {
+    return `<div class="psalm">
     <h2>Psalm <span class="${chapter}">${chapter}</span></h2>
     <div>${verses}</div>
   </div>`
-}
+  }
 
-/**
- * @param {Number} number - The verse number
- * @param {string} verse - The verse itself.
- * @returns {string} returns the HTML of the verse
- */
-function renderVerse(number, verse) {
-  return `<strong>${number}</strong> ${verse} <br>`
-}
+  /**
+   * @param {Number} number - The verse number
+   * @param {string} verse - The verse itself.
+   * @returns {string} returns the HTML of the verse
+   */
+  function renderVerse(number, verse) {
+    return `<strong>${number}</strong> ${verse} <br>`
+  }
 
-/**
- * 
- * @param {JSON} psalms - data from psalms.js
- * @param {Array<Number>} chapters - array of chapters e.g. [3,33,63,93,123]
- * @returns {string} HTML of the app
- */
-function renderApp(psalms, chapters) {
-  let html = ''
+  /**
+   * 
+   * @param {JSON} psalms - data from psalms.js
+   * @param {Array<Number>} chapters - array of chapters e.g. [3,33,63,93,123]
+   * @returns {string} HTML of the app
+   */
+  function renderApp(psalms, chapters) {
+    let html = ''
 
-  chapters.forEach(c => {
-    let versesHTML = ''
-    const chapter = psalms.book[c].chapter
+    chapters.forEach(c => {
+      let versesHTML = ''
+      const chapter = psalms.book[c].chapter
 
-    Object.keys(chapter).map(v => {
-      versesHTML += renderVerse(v, chapter[v].verse)
+      Object.keys(chapter).map(v => {
+        versesHTML += renderVerse(v, chapter[v].verse)
+      })
+
+      html += renderPsalm(c, versesHTML)
     })
 
-    html += renderPsalm(c, versesHTML)
-  })
+    return html
+  }
 
-  return html
-}
-
-// Render the app into <div id="psalms"></div>
-document.getElementById('psalms').innerHTML = renderApp(psalms, psalmsOTD)
+  // Render the app into <div id="psalms"></div>
+  document.getElementById('kjv').innerHTML = renderApp(psalms, psalmsOTD)

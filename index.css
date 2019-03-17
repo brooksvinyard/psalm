@@ -109,6 +109,12 @@ p, div, footer {
 strong, b {
     font-weight: bold;
 }
+/* ******************************* */
+/* Themes */
+/* Light */
+/* $body-bg: rgba(10, 191, 188, 0.5);; */
+
+/* ******************************* */
 
 body {
     /* background-color: #d9d8e8; */
@@ -153,6 +159,7 @@ header {
     
 }
 
+
 .psalm {
     /* border-top: 1px solid rgb(5, 75, 74);; */
     /* background-color: white; */
@@ -164,9 +171,13 @@ header {
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
     
 }
+#esv, #kjv {
+    /* margin: 10px 1%; */
+    
+}
 
 @media (max-width: 500px) {
-    .instructions, .psalm {
+    .instructions, #esv, #kjv {
         padding: 5% 7%;
         margin: 5px 0;
     }

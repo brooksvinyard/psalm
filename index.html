@@ -8,14 +8,28 @@
     <title>Psalm of The Day</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./menu.css">
     
     <script src="./psalms.js"></script>
     <script src="./index.js" async></script>
+    <script src="./menu.js" async></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
+            <div class="menu">
+                    <div class="menu-button">MENU</div>
+                    <div class="menu-content menu-hidden slide-out-right">
+                        <img src="./images/close.svg" alt="close" class="close-btn">
+                        <ul>
+                            <h3>Translation</h3>
+                            <li class="choose-esv">ESV</li>
+                            <li class="choose-kjv">KJV</li>
+                        </ul>
+                    </div>
+                </div>
     <header>
         <h1>Psalm.me</h1>
         <p>Psalm of the day</p>
@@ -23,10 +37,10 @@
 
     <div class="instructions">
         <p>There are five Psalms listed. Skim through the first few lines of them to see which one speaks to you today. You can then pray through the Psalm and be encouraged by the Word.</p>
+    </div>    
+    <div id="esv" ></div>
+    <div id="kjv" class="translation-off"></div>
     </div>
-
-    <div id="psalms"></div>
-
     <footer>
         <br>Copyright 2019
     </footer>
