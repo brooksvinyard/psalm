@@ -171,13 +171,9 @@ header {
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px 0px rgba(0, 0, 0, 0.14), 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
     
 }
-#esv, #kjv {
-    /* margin: 10px 1%; */
-    
-}
 
 @media (max-width: 500px) {
-    .instructions, #esv, #kjv {
+    .instructions {
         padding: 5% 7%;
         margin: 5px 0;
     }
