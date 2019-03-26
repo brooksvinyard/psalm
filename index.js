@@ -21,14 +21,10 @@ if (todaysDate != 31) {
 
 ///////////////////////////////////
 // ESV
-//const header = "Authorization: Token 7da60d7d2f5a81d0d7a463497986c890c72c99ca";
-// f7880735e365d733416b486cba4f75a2669769c5
-
-const token = '7da60d7d2f5a81d0d7a463497986c890c72c99ca';
 const url = 'https://api.esv.org/v3/passage/html/?'
 const myHeaders = ({
     'Accept': 'application/json',
-    'authorization': 'Token f7880735e365d733416b486cba4f75a2669769c5'
+    'authorization': 'Token 7da60d7d2f5a81d0d7a463497986c890c72c99ca'
   });
 
 let myInit = {
