@@ -50,7 +50,7 @@ let params = "q=Ps" + `${psalmsOTD.join(",")}` +
 fetch(`${url}${params}`, myInit)
   .then(res => res.json())
   .then(json => {
-    console.log(json);
+    // console.log(json);
     let passage = json.passages.join("");
     document.getElementById('esv').innerHTML += passage;
   });
